@@ -1,52 +1,79 @@
-# Google Places Autocomplete with Map
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-A React Native app that integrates Google Places Autocomplete with Google Maps. 
-Users can search for places using an autocomplete input field, and the selected location is displayed on a Google Map.
-The application also stores search history in Redux.
+# Getting Started
 
-### Features
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-- `Google Places` Autocomplete API integration for search suggestions.
-- Display selected place on `Google Maps`.
-- Store search history using `Redux`.
+## Step 1: Start the Metro Server
 
-### Requirements
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-- Node.js >= 12.x
-- Google Places API key
-- React 16.8+ (hooks support)
+To start Metro, run the following command from the _root_ of your React Native project:
 
-### Libraries Used
+```bash
+# using npm
+npm start
 
-- `React native`: A framework that allows you to build natively-rendered mobile apps for iOS and Android.
-- `Ant Design`: UI component library for React.
-- `Google Maps API`: For rendering maps and places.
-- `Google Places API`: For fetching place autocomplete suggestions.
-- `Redux/toolkit`: For store search history
+# OR using Yarn
+yarn start
+```
 
-### Installation
+## Step 2: Start your Application
 
-- Clone the Github repository
-- Navigate to Project directory
-- Run `npm install` to install packages
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
-### Run the Application
+### For Android
 
-Once everything is set up, run the application:
-For IOS:
-   - npx react-native run-ios,
+```bash
+# using npm
+npm run android
 
-For Android:
-   - npx react-native run-android
+# OR using Yarn
+yarn android
+```
 
-### API Integration
-This app uses the following Google APIs:
+### For iOS
 
-- Google Places Autocomplete API: To fetch location suggestions as users type in the search input.
-- Google Places Details API: To fetch detailed information about the selected place, such as its geographical coordinates.
-- Google Maps: To display the selected place on a map.
-### Usage
-- Search for a Place: Enter the place name in the search bar.
-- Select a Place: From the list of suggestions, tap on a place to view details and see its location on the map..
+```bash
+# using npm
+npm run ios
 
+# OR using Yarn
+yarn ios
+```
 
+If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+
+## Step 3: Modifying your App
+
+Now that you have successfully run the app, let's modify it.
+
+1. Open `App.tsx` in your text editor of choice and edit some lines.
+2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+
+   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+
+## Congratulations! :tada:
+
+You've successfully run and modified your React Native App. :partying_face:
+
+### Now what?
+
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+
+# Troubleshooting
+
+If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+
+# Learn More
+
+To learn more about React Native, take a look at the following resources:
+
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
