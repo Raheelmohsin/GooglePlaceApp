@@ -1,79 +1,79 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Google Places Autocomplete with Map
 
-# Getting Started
+A React Native application that integrates Google Places Autocomplete with Google Maps. 
+Users can search for places using an autocomplete input field, and the selected location is displayed on a Google Map.
+The application also stores search history in Redux.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+### Features
 
-## Step 1: Start the Metro Server
+- Autocomplete search for places using the Google Places API.
+- Select a place from the autocomplete suggestions.
+- Display the selected place on a map.
+- Handle errors in fetching suggestions or place details.
+- Uses Redux for state management to store suggestions and handle errors.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+### Requirements
 
-```bash
-# using npm
-npm start
+- Node.js >=18
+- Google Places API key
+- react" 18.3.1",
+- react-native "0.75.3",
 
-# OR using Yarn
-yarn start
-```
+### Libraries Used
 
-## Step 2: Start your Application
+- `React Native`: A framework that allows you to build natively-rendered mobile apps for iOS and Android.
+- `Google Maps API`: For rendering maps and places.
+- `Google Places API`: For fetching place autocomplete suggestions.
+- `Redux/toolkit`: For store search history
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### Installation
 
-### For Android
+- Clone the Github repository
+- Navigate to Project directory
+- Run `npm install` to install packages
 
-```bash
-# using npm
-npm run android
+### Run the Application
 
-# OR using Yarn
-yarn android
-```
+Once everything is set up, run the application:
+For iOS:
+- `npx react-native run-ios`
 
-### For iOS
+For Android:
+- `npx react-native run-android`
 
-```bash
-# using npm
-npm run ios
+### Usage
+- Launch the application.
+- In the search bar, start typing the name of a place.
+- Suggestions will appear as you type.
+- Select a place from the list to view its location on the map.
+- The map will update to center on the selected place.
 
-# OR using Yarn
-yarn ios
-```
+  
+## Redux Store Setup
+The application uses Redux for state management, including actions and reducers to manage the place suggestions and error handling.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### Actions
+Actions related to suggestions and errors are defined in redux/actions.js:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+`setSuggestions(suggestions)`
+`setError(errorMessage)`
 
-## Step 3: Modifying your App
+### Reducer
+The reducer to handle the state is in redux/reducer.js, which manages:
 
-Now that you have successfully run the app, let's modify it.
+suggestions: An array of place suggestions.
+error: Error messages related to the API calls.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+### Store
+The Redux store is set up in redux/store.js and includes redux-thunk middleware to handle asynchronous API calls.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+### Google Places API
+This application utilizes the Google Places API for place autocomplete suggestions and fetching place details, such as location (latitude, longitude) for displaying on the map.
 
-## Congratulations! :tada:
+### Services
+All API-related logic has been abstracted into the services/googlePlacesService.js file. This includes:
 
-You've successfully run and modified your React Native App. :partying_face:
+`fetchPlaceSuggestions(query)`: Fetches autocomplete suggestions based on the user's input.
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+`fetchPlaceDetails(placeId)`: Fetches detailed information about a selected place, including its location.
